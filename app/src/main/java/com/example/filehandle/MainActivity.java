@@ -108,8 +108,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int idChecked = radGroup.getCheckedRadioButtonId();
         switch (view.getId()) {
             case R.id.btSave:
+                if (idChecked == R.id.radInternal) {
+                    onSaveInternal();
+                } else {
+                    onSaveExternal();
+                }
                 break;
             case R.id.btRead:
+                if (idChecked == R.id.radInternal) {
+                    onReadInternal();
+                } else {
+                    onReadExternal();
+                }
                 break;
             default:
                 break;
